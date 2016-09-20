@@ -1,0 +1,31 @@
+{
+  "name": "pirati-plzensko",
+  "description": "Krajske volby 2016",
+  "main": "app.js",
+  "authors": [
+    "Petr Kopac"
+  ],
+  "license": "GPL-3.0",
+  "keywords": [
+    "volby",
+    "pirati"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/libs/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "startbootstrap-grayscale": "https://github.com/BlackrockDigital/startbootstrap-grayscale.git#^3.3.7",
+    "jquery-easing": "*",
+    "font-awesome": "*",
+    "bootstrap-social-buttons": "^1.0.0",
+    "jquery.countdown": "^2.2.0",
+    "jquery-lazy": "^1.7.3"
+  }
+}

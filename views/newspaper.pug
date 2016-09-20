@@ -1,0 +1,20 @@
+extends layout
+block pageMetadata
+  -
+    var pageDescription = "Tyhle články jinde nenajdete. Piráti letos vydávají ve všech krajích vlastní noviny!",
+    pageImageUrl = "https://plzensko.pirati.cz/img/sharing/newspaper.jpg",
+    pageTitle = "Pirátské listy Plzeňsko - krajské volby 2016";
+
+block title
+  | Pirátské listy -&nbsp;
+
+block content
+  section#kandidati.container.content-section.intro
+    .row
+      .col-md-10.col-md-offset-1
+        h2
+          a(href="/piratske_listy_2016.pdf" download) Pirátské listy z&nbsp;Plzeňska ke&nbsp;stažení v&nbsp;PDF
+        object(data="/piratske_listy_2016.pdf" type="application/pdf" style="height:100vh; width: 100%;")
+          p Ups! Váš prohlížeč nepodporuje čtení PDF. Ale nezoufejte :) a klikněte prosím na obrázek nebo nadpis.
+          a(href="/piratske_listy_2016.pdf" download)
+            img(src="img/sharing/newspaper.jpg" width="100%")

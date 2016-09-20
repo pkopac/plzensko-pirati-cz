@@ -1,0 +1,22 @@
+extends layout
+block pageMetadata
+  -
+    var pageDescription = article.short,
+        pageImageUrl = "https://plzensko.pirati.cz/img/blog/" + article.image,
+        pageTitle = article.header;
+
+//- route sends article
+
+//- RENDER
+
+block title
+  | #{article.header} -&nbsp;
+
+
+block content
+  section
+    br
+    br
+    .row
+      .col-lg-6.col-lg-offset-3
+        +article(article)

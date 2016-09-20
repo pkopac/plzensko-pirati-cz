@@ -1,0 +1,18 @@
+extends layout
+
+//- route sends articles
+
+//- RENDER
+
+block title
+  | Blog -&nbsp;
+
+block content
+
+  section#content.container.content-section.text-center
+    .row
+      .col-lg-8.col-lg-offset-2
+        - for (var i = 0; i < articles.length; ++i) {
+          - var article = articles[i];
+          +article(article)
+        - }

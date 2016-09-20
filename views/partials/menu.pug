@@ -1,0 +1,37 @@
+mixin menuAndLogo(index)
+  -
+    var prefix, classForLinks
+    if (index) {
+      prefix = "";
+      classForLinks = "page-scroll";
+    } else {
+      prefix = "/";
+      classForLinks = "";
+    }
+    var menu = [
+      {href: "kandidati", title: "Kandidáti"},
+      {href: "program", title: "Program"},
+      {href: "transparence", title: "Transparence"},
+      //{href: "akce", title: "Akce"},
+      {href: "blog", title: "Blog"},
+      {href: "media", title: "Média"},
+      {href: "kontakty", title: "Kontakty"}
+    ];
+
+  nav.navbar.navbar-custom.navbar-fixed-top(role="navigation")
+    .container
+      .navbar-header
+        button.navbar-toggle(type="button", data-toggle="collapse", data-target=".navbar-main-collapse")
+          i.fa.fa-bars
+        a.navbar-brand.page-scroll(href=prefix + "#page-top")
+          div.smallLogo
+          span.light &nbsp;Piráti - Krajské volby 2016
+      .collapse.navbar-collapse.navbar-right.navbar-main-collapse
+        ul.nav.navbar-nav
+          // Hidden li included to remove active class from about link when scrolled up past about section
+          li.hidden
+            a(href="#page-top")
+          each item in menu
+            li
+              a(class=classForLinks href=prefix + "#" + item.href data-toggle="collapse" data-target=".navbar-collapse.in")= item.title
+          

@@ -1,0 +1,31 @@
+mixin articleCarousel(article, active)
+  .item(style="background-image: url(\"/img/blog/" + article.image + "\")" class=active ? "active": "")
+    .carousel-caption
+      h3
+        a(href="/clanek/" + article.id).page-scroll!= article.header
+      p!= article.short
+
+section#blog.container.content-section
+  .row
+    .col-md-8.col-md-offset-2
+      h2 Blog
+      #carousel.carousel.slide(data-ride="carousel")
+        ol.carousel-indicators
+          li(data-target="#carousel" data-slide-to="0").active
+          li(data-target="#carousel" data-slide-to="1")
+          li(data-target="#carousel" data-slide-to="2")
+        .carousel-inner(role="listbox")
+          +articleCarousel(articles[0], true)
+          - var carouselArticles = articles.slice(1, 3);
+          - for (var i = 0; i < carouselArticles.length; ++i) {
+            +articleCarousel(carouselArticles[i], false)
+          - }
+        a.left.carousel-control(href="#carousel" role="button" data-slide="prev")
+          span.glyphicon.glyphicon-chevron-left(aria-hidden="true")
+          span.sr-only Previous
+        a.right.carousel-control(href="#carousel" role="button" data-slide="next")
+          span.glyphicon.glyphicon-chevron-right(aria-hidden="true")
+          span.sr-only Next
+      p.text-center
+        br
+        a(href="/blog") Všechny články&hellip;

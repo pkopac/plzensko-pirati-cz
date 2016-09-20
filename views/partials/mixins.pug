@@ -1,0 +1,15 @@
+mixin header(title, id, acId)
+  .panel-heading(role="tab" id="heading" + id)
+    h4.panel-title
+      a(role="button" data-toggle="collapse" data-parent="#accordion"+acId href="#"+id aria-expanded="false" aria-controls=id)!= title
+  .panel-collapse.collapse(role="tabpanel" aria-labelledby="heading"+id id=id)
+    .panel-body
+      block
+
+mixin article(article)
+  article(id=article.id)
+    h3!= article.header
+      br
+      small!= article.short
+    img.main.lazy(src="/img/blog/" + article.image)
+    div!= article.full

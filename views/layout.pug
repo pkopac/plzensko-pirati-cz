@@ -1,0 +1,19 @@
+include ./partials/mixins
+
+block variables
+  -
+    var isIndex = false;
+
+doctype html
+html
+  head
+    include ./partials/head
+    title
+      block title
+      | Krajské volby 2016 - Plzeňský kraj - Piráti
+    block head
+  body(id="page-top" data-spy="scroll" data-target=".navbar-fixed-top")
+    include ./partials/menu
+    +menuAndLogo(isIndex)
+    block content
+    include ./partials/footer

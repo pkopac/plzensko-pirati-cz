@@ -1,0 +1,55 @@
+extends layout
+
+block variables
+  -
+    var isIndex = true;
+
+block head
+  //- link(rel="amphtml" href="index.amp")
+
+block content
+  .intro
+    .intro-body
+      .container
+        .row
+          .col-md-8.col-md-offset-2
+            h1.brand-heading Pirátská strana
+            p.intro-text Krajské volby 2016
+              br
+              | Plzeňsko
+            p
+              include ./partials/social
+            a(href="#motto").btn.btn-circle.page-scroll
+              .i.fa.fa-angle-double-down.animated
+
+  mixin motto
+    | &bdquo;Stavme chodníky tam, kde chodí lidé, <br />a&nbsp;nenuťme lidi chodit tam, <br />kde jsou postavené chodníky.&ldquo;
+  mixin mottoDesc
+    p To je způsob uvažování Pirátů, jediné středové liberální strany, která dává přednost svobodám jednotlivce před zájmovými skupinami.
+      |  Piráti nemají žádného velkého sponzora, kterému by měli být po volbách vděční, což z nich dělá nejdůvěryhodnější volbu v boji proti korupci a klientelismu.
+
+  section.container#motto.content-section
+    .row
+      .col-md-8.col-md-offset-2
+        h2
+          +motto
+        +mottoDesc
+
+  include ./partials/candidates
+  +kandidatiSection
+
+  include ./partials/program
+
+  include ./partials/transparency
+
+  //include ./partials/events
+
+  include ./partials/articles
+
+  section.container#piratskeListy.content-section
+    a(href="/noviny")
+      img(src="/img/listyBanner.png" style="width: 100%")
+
+  include ./partials/media
+
+  include ./partials/contacts
